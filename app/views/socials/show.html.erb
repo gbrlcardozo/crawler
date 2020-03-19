@@ -1,0 +1,44 @@
+<div class="container">
+  <br>
+    <p>
+      <strong>Source:</strong>
+      <%= @social.source %>
+    </p>
+
+    <p>
+      <strong>URL:</strong>
+      <a href="<%= @social.url %>" target="_blank"><%= @social.url %></a>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @social.title %>
+    </p>
+
+    <p>
+      <strong>Subtitle:</strong>
+      <%= @social.subtitle %>
+    </p>
+
+    <p>
+      <strong>Body:</strong>
+      <%= @social.body %>
+    </p>
+
+    <p>
+      <strong>Tags:</strong>
+      <%= @social.tags.to_s == "" ? '---' :  @social.tags %>
+    </p>
+
+    <p>
+      <strong>Publication:</strong>
+      <%= @social.publication %>
+    </p>
+
+    <p>
+      <strong>Collect:</strong>
+      <td><%= @social.created_at.strftime("%d/%m/%Y") %></td>
+    </p>
+
+    <%= link_to 'Back', socials_path %>
+</div>

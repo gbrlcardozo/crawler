@@ -1,0 +1,44 @@
+<div class="container">
+  <br>
+    <p>
+      <strong>Source:</strong>
+      <%= @crawler.source %>
+    </p>
+
+    <p>
+      <strong>URL:</strong>
+      <a href="<%= @crawler.url %>" target="_blank"><%= @crawler.url %></a>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @crawler.title %>
+    </p>
+
+    <p>
+      <strong>Subtitle:</strong>
+      <%= @crawler.subtitle %>
+    </p>
+
+    <p>
+      <strong>Body:</strong>
+      <%= @crawler.body %>
+    </p>
+
+    <p>
+      <strong>Tags:</strong>
+      <%= @crawler.tags.to_s == "" ? '---' :  @crawler.tags %>
+    </p>
+
+    <p>
+      <strong>Publication:</strong>
+      <%= @crawler.publication %>
+    </p>
+
+    <p>
+      <strong>Collect:</strong>
+      <td><%= @crawler.created_at.strftime("%d/%m/%Y") %></td>
+    </p>
+
+    <%= link_to 'Back', crawlers_path %>
+</div>

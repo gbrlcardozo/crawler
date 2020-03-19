@@ -1,0 +1,43 @@
+<div class="container">
+  <br>
+    <p>
+      <strong>Source:</strong>
+      <%= @culture.source %>
+    </p>
+
+    <p>
+      <strong>URL:</strong>
+      <a href="<%= @culture.url %>" target="_blank"><%= @culture.url %></a>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @culture.title %>
+    </p>
+
+    <p>
+      <strong>Subtitle:</strong>
+      <%= @culture.subtitle %>
+    </p>
+    <p>
+      <strong>Body:</strong>
+      <%= @culture.body %>
+    </p>
+
+    <p>
+      <strong>Tags:</strong>
+      <%= @culture.tags.to_s == "" ? '---' :  @culture.tags %>
+    </p>
+
+    <p>
+      <strong>Publication:</strong>
+      <%= @culture.publication %>
+    </p>
+
+    <p>
+      <strong>Collect:</strong>
+      <td><%= @culture.created_at.strftime("%d/%m/%Y") %></td>
+    </p>
+
+    <%= link_to 'Back', cultures_path %>
+</div>

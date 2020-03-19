@@ -1,0 +1,44 @@
+<tbody>
+  <div class="container">
+    <h1>Culture List</h1>
+
+  <%= search_form_for @q do |f| %>
+      <%= f.label :source_or_title_or_tags_cont %>
+      <%= f.search_field :source_or_title_or_tags_cont %>
+    <%= f.submit %>
+  <% end %>
+  <br/>
+
+    <div class="float-right" style="margin-bottom: 20px">
+      <%= link_to 'New', new_culture_path %>
+    </div>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Source</th>
+        <th>URL</th>
+        <th>Title</th>
+        <th>Tags</th>
+        <th>Collect</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <% @cultures.each do |culture| %>
+      <tr>
+        <td><%= culture.source %></td>
+        <td>
+          <a href="<%= culture.url %>" target="_blank"><%= culture.url %></a>
+        </td>
+        <td><%= culture.title %></td>
+        <td><%= culture.tags.to_s == "" ? '---' :  crawler.tags %></td>
+        <td><%= culture.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', culture %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="pagination" style="display: flex; justify-content: center">
+  <%= will_paginate @pag %>
+</div>
+</tbody>
