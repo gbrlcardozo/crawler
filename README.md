@@ -1,7 +1,7 @@
 ## Usage
 
-Install deps:
+`bundle install`
 
-`gem install bundler && bundle install`
 `rake db:migrate`
+
 `rail s`
